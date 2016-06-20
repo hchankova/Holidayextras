@@ -1,0 +1,23 @@
+<div class="w3-container">    
+    <form name="form" style="margin: auto; width: 60%; padding: 10px;">
+        <div class="w3-container w3-blue">
+            <h2>Create/update user</h2>
+        </div>        
+        <p> 
+            <label class="w3-text-blue">Forename</label>
+            <input ng-model="post.forename" class="w3-input" type="text" required>
+        </p>
+        <p> 
+            <label class="w3-text-blue">Surname</label>
+            <input ng-model="post.surname" class="w3-input" type="text" required>
+        </p>
+        <p> 
+            <label class="w3-text-blue">Email</label>
+            <input ng-model="post.email" class="w3-input" type="email" required>
+        </p>
+        <p> 
+            <button class="w3-btn w3-white w3-border w3-border-black w3-round-large" ng-click="back();">Back</button>
+            <button class="w3-btn w3-white w3-border w3-border-green w3-round-large" ng-click="save();" ng-disabled="form.$invalid">Save</button>
+        </p>
+    </form>
+</div>

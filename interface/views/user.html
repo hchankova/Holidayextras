@@ -1,0 +1,56 @@
+<div class="w3-container" style="margin: auto; width: 60%; padding: 10px;">
+    <button class="w3-btn w3-white w3-border w3-border-blue w3-round-large" ng-click="add();">Add user</button>
+    <div class="input-control text" style="float: right;">
+        <input type="text" ng-model="search" placeholder="Search">
+    </div>
+</div>
+<div class="w3-container" style="margin: auto; width: 60%; padding: 10px;">
+    <table class="w3-table w3-bordered w3-small">
+        <tr>
+            <th>Forename</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Created Date</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="res in users | filter:search">
+            <td>{{ res.forename}}</td>
+            <td>{{ res.surname}}</td>
+            <td>{{ res.email}}</td>
+            <td>{{ res.created}}</td>
+            <td><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" ng-click="edit(res)">Edit</button>   <button class="w3-btn w3-white w3-border w3-border-red w3-round-large" ng-click="remove(res.id)">Delete</button>
+            </td>
+        </tr>
+    </table>    
+</div>
+    
+<div class="w3-container" style="margin: auto; width: 60%; padding: 10px;">    
+    <table class="w3-table w3-bordered w3-small">
+        <tr>
+            <th>URL</th>
+            <th>HTTP Method </th>
+            <th>Operation</th>   
+        </tr>
+        <tr>
+            <td>/api/user</td>
+            <td>GET</td>
+            <td>Returns an array of users</td>  
+        </tr>
+        <tr>
+            <td>/api/user</td>
+            <td>POST</td>
+            <td> Adds a new user and return it with an id attribute added</td>  
+        </tr>
+        <tr>
+            <td>/api/user/:id</td>
+            <td>PUT</td>
+            <td>Updates the user with id of :id</td>  
+        </tr>
+        <tr>
+            <td>/api/user/:id</td>
+            <td>DELETE</td>
+            <td>Deletes the user with id of :id</td>  
+        </tr>
+    </table>
+</div>
+    
